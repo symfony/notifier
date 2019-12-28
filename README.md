@@ -11,6 +11,7 @@ are not covered by Symfony's
 Resources
 ---------
 
+  * [Screencast](https://symfonycasts.com/screencast/london2019/keynote) (Note: there is no official documention yet)
   * [Documentation](https://symfony.com/doc/current/components/notifier.html)
   * [Contributing](https://symfony.com/doc/current/contributing/index.html)
   * [Report issues](https://github.com/symfony/symfony/issues) and
