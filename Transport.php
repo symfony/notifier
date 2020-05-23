@@ -19,6 +19,7 @@ use Symfony\Component\Notifier\Bridge\OvhCloud\OvhCloudTransportFactory;
 use Symfony\Component\Notifier\Bridge\RocketChat\RocketChatTransportFactory;
 use Symfony\Component\Notifier\Bridge\Sinch\SinchTransportFactory;
 use Symfony\Component\Notifier\Bridge\Slack\SlackTransportFactory;
+use Symfony\Component\Notifier\Bridge\Smsapi\SmsapiTransportFactory;
 use Symfony\Component\Notifier\Bridge\Telegram\TelegramTransportFactory;
 use Symfony\Component\Notifier\Bridge\Twilio\TwilioTransportFactory;
 use Symfony\Component\Notifier\Exception\UnsupportedSchemeException;
@@ -50,6 +51,7 @@ class Transport
         FirebaseTransportFactory::class,
         SinchTransportFactory::class,
         FreeMobileTransportFactory::class,
+        SmsapiTransportFactory::class,
     ];
 
     private $factories;

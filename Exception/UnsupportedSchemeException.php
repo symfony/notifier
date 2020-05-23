@@ -62,6 +62,10 @@ class UnsupportedSchemeException extends LogicException
             'class' => Bridge\Sinch\SinchTransportFactory::class,
             'package' => 'symfony/sinch-notifier',
         ],
+        'smsapi' => [
+            'class' => Bridge\Smsapi\SmsapiTransportFactory::class,
+            'package' => 'symfony/smsapi-notifier',
+        ]
     ];
 
     /**
