@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+7.3
+---
+
+ * Add `Dsn::getBooleanOption()`
+
 7.2
 ---
 
