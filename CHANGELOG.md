@@ -5,6 +5,7 @@ CHANGELOG
 ---
 
  * Add `Dsn::getBooleanOption()`
+ * Add `info` property in `SentMessage`
 
 7.2
 ---
