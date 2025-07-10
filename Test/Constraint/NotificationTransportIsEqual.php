@@ -28,7 +28,7 @@ final class NotificationTransportIsEqual extends Constraint
 
     public function toString(): string
     {
-        return sprintf('is "%s"', $this->expectedText);
+        return \sprintf('is "%s"', $this->expectedText);
     }
 
     /**
