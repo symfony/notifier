@@ -77,7 +77,7 @@ CHANGELOG
  * The `EmailRecipientInterface` and `SmsRecipientInterface` now extend the `RecipientInterface`.
  * The `EmailRecipient` and `SmsRecipient` were introduced.
  * [BC BREAK] Changed the type-hint of the `$recipient` argument in `NotifierInterface::send()`,
-   `Notifier::getChannels()`, `ChannelInterface::notifiy()` and `ChannelInterface::supports()` to
+   `Notifier::getChannels()`, `ChannelInterface::notify()` and `ChannelInterface::supports()` to
    `RecipientInterface`.
  * Changed `EmailChannel` to only support recipients which implement the `EmailRecipientInterface`.
  * Changed `SmsChannel` to only support recipients which implement the `SmsRecipientInterface`.
