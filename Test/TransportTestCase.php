@@ -45,12 +45,18 @@ abstract class TransportTestCase extends TestCase
      */
     abstract public static function unsupportedMessagesProvider(): iterable;
 
+    /**
+     * @dataProvider toStringProvider
+     */
     #[DataProvider('toStringProvider')]
     public function testToString(string $expected, TransportInterface $transport)
     {
         $this->assertSame($expected, (string) $transport);
     }
 
+    /**
+     * @dataProvider supportedMessagesProvider
+     */
     #[DataProvider('supportedMessagesProvider')]
     public function testSupportedMessages(MessageInterface $message, ?TransportInterface $transport = null)
     {
@@ -59,6 +65,9 @@ abstract class TransportTestCase extends TestCase
         $this->assertTrue($transport->supports($message));
     }
 
+    /**
+     * @dataProvider unsupportedMessagesProvider
+     */
     #[DataProvider('unsupportedMessagesProvider')]
     public function testUnsupportedMessages(MessageInterface $message, ?TransportInterface $transport = null)
     {
@@ -67,6 +76,9 @@ abstract class TransportTestCase extends TestCase
         $this->assertFalse($transport->supports($message));
     }
 
+    /**
+     * @dataProvider unsupportedMessagesProvider
+     */
     #[DataProvider('unsupportedMessagesProvider')]
     public function testUnsupportedMessagesTrowUnsupportedMessageTypeExceptionWhenSend(MessageInterface $message, ?TransportInterface $transport = null)
     {
