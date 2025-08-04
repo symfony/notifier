@@ -37,9 +37,6 @@ abstract class AbstractTransportFactoryTestCase extends TestCase
      */
     abstract public static function unsupportedSchemeProvider(): iterable;
 
-    /**
-     * @dataProvider supportsProvider
-     */
     #[DataProvider('supportsProvider')]
     public function testSupports(bool $expected, string $dsn)
     {
