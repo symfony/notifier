@@ -66,7 +66,7 @@ class TransportsTest extends TestCase
     public function testThrowExceptionIfNoSupportedTransportWasFound()
     {
         $transports = new Transports([
-            'one' => $one = $this->createMock(TransportInterface::class),
+            'one' => $one = $this->createStub(TransportInterface::class),
         ]);
 
         $message = new ChatMessage('subject');
@@ -82,8 +82,8 @@ class TransportsTest extends TestCase
     public function testThrowExceptionIfTransportDefinedByMessageIsNotSupported()
     {
         $transports = new Transports([
-            'one' => $one = $this->createMock(TransportInterface::class),
-            'two' => $two = $this->createMock(TransportInterface::class),
+            'one' => $one = $this->createStub(TransportInterface::class),
+            'two' => $two = $this->createStub(TransportInterface::class),
         ]);
 
         $message = new ChatMessage('subject');
@@ -101,7 +101,7 @@ class TransportsTest extends TestCase
     public function testThrowExceptionIfTransportDefinedByMessageDoesNotExist()
     {
         $transports = new Transports([
-            'one' => $one = $this->createMock(TransportInterface::class),
+            'one' => $one = $this->createStub(TransportInterface::class),
         ]);
 
         $message = new ChatMessage('subject');
