@@ -12,6 +12,7 @@
 namespace Symfony\Component\Notifier\Tests\Event;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\Notifier\Event\FailedMessageEvent;
 use Symfony\Component\Notifier\Event\MessageEvent;
 use Symfony\Component\Notifier\Message\ChatMessage;
@@ -21,7 +22,6 @@ use Symfony\Component\Notifier\Message\SmsMessage;
 use Symfony\Component\Notifier\Tests\Transport\DummyMessage;
 use Symfony\Component\Notifier\Transport\AbstractTransport;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class FailedMessageEventTest extends TestCase
 {
@@ -52,7 +52,7 @@ class FailedMessageEventTest extends TestCase
     public function testFailedMessageEventIsDisptachIfError()
     {
         $eventDispatcherMock = $this->createMock(EventDispatcherInterface::class);
-        $clientMock = $this->createMock(HttpClientInterface::class);
+        $clientMock = new MockHttpClient();
 
         $transport = new class($clientMock, $eventDispatcherMock) extends AbstractTransport {
             public NullTransportException $exception;
