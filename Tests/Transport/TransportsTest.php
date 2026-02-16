@@ -29,7 +29,9 @@ class TransportsTest extends TestCase
 
         $message = new ChatMessage('subject');
 
-        $one->method('supports')->with($message)->willReturn(true);
+        $one->method('supports')->willReturnMap([
+            [$message, true],
+        ]);
 
         $one->expects($this->once())->method('send')->willReturn(new SentMessage($message, 'one'));
 
